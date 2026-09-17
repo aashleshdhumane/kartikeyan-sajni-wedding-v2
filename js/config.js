@@ -275,7 +275,7 @@ const weddingConfig = {
      current page URL at runtime.
      ------------------------------------------------------------------------ */
   sharing: {
-    url: "",
+    url: "https://aashleshdhumane.github.io/kartikeyan-sajni-wedding-v2/",
     message:
       "With love and happiness, we invite you to celebrate the wedding of " +
       "Kartikeyan & Sajni \u2764\ufe0f\n\nWe would be delighted to have you with us.\n",
