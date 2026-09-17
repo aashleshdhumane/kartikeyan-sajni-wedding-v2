@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 280" width="240" height="280">
+  <rect width="240" height="280" fill="#ffffff"/>
+  <!-- Faux QR pattern (placeholder only — replace with your real UPI QR) -->
+  <g fill="#5c1a2b">
+    <rect x="20" y="20" width="60" height="60" fill="none" stroke="#5c1a2b" stroke-width="10"/>
+    <rect x="40" y="40" width="20" height="20"/>
+    <rect x="160" y="20" width="60" height="60" fill="none" stroke="#5c1a2b" stroke-width="10"/>
+    <rect x="180" y="40" width="20" height="20"/>
+    <rect x="20" y="160" width="60" height="60" fill="none" stroke="#5c1a2b" stroke-width="10"/>
+    <rect x="40" y="180" width="20" height="20"/>
+    <rect x="100" y="20" width="15" height="15"/>
+    <rect x="120" y="40" width="15" height="15"/>
+    <rect x="100" y="60" width="15" height="15"/>
+    <rect x="140" y="100" width="15" height="15"/>
+    <rect x="100" y="120" width="15" height="15"/>
+    <rect x="160" y="140" width="15" height="15"/>
+    <rect x="180" y="120" width="15" height="15"/>
+    <rect x="120" y="160" width="15" height="15"/>
+    <rect x="160" y="180" width="15" height="15"/>
+    <rect x="200" y="200" width="15" height="15"/>
+    <rect x="120" y="200" width="15" height="15"/>
+    <rect x="100" y="180" width="15" height="15"/>
+    <rect x="180" y="200" width="15" height="15"/>
+  </g>
+  <text x="120" y="255" font-family="Inter, Arial, sans-serif" font-size="13" fill="#6b5a4f"
+        text-anchor="middle">Placeholder QR — replace me</text>
+</svg>

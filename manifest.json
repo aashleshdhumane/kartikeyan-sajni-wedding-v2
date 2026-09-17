@@ -1,0 +1,19 @@
+{
+  "name": "Kartikeyan & Sajni — Wedding Invitation",
+  "short_name": "K & S Wedding",
+  "description": "With the blessings of our families, we invite you to celebrate our wedding.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#fdf9f1",
+  "theme_color": "#5c1a2b",
+  "icons": [
+    {
+      "src": "assets/images/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

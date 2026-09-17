@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+
+  <title>The Wedding of Kartikeyan &amp; Sajni</title>
+  <meta name="description" content="With the blessings of our families, we invite you to celebrate the wedding of Kartikeyan Gupta & Sajni Suvarna." />
+  <meta name="theme-color" content="#5c1a2b" />
+  <meta name="author" content="The Gupta & Suvarna Families" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="The Wedding of Kartikeyan &amp; Sajni" />
+  <meta property="og:description" content="With the blessings of our families, we invite you to celebrate our wedding." />
+  <!-- For best WhatsApp/social previews, replace with a real JPG/PNG (1200x630)
+       and update this path to assets/images/share-preview.jpg -->
+  <meta property="og:image" content="assets/images/share-preview.svg" />
+  <meta property="og:locale" content="en_IN" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="The Wedding of Kartikeyan &amp; Sajni" />
+  <meta name="twitter:description" content="With the blessings of our families, we invite you to celebrate our wedding." />
+  <meta name="twitter:image" content="assets/images/share-preview.svg" />
+
+  <!-- Icons / PWA -->
+  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="assets/images/favicon.svg" />
+  <link rel="manifest" href="manifest.json" />
+
+  <!-- Fonts: Google Fonts with graceful serif/sans fallbacks in CSS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet"
+    media="print"
+    onload="this.media='all'"
+  />
+  <noscript>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </noscript>
+
+  <link rel="stylesheet" href="css/styles.css" />
+
+  <!-- Mark JS as available before first paint so reveal/opening enhancements
+       apply. If JS is disabled or fails to load, the page stays fully visible. -->
+  <script>document.documentElement.classList.add("js-ready");</script>
+</head>
+<body>
+
+  <!-- ============================ LOADING / TAP TO BEGIN ==================== -->
+  <div id="opening" class="opening" role="dialog" aria-label="Open your wedding invitation">
+    <div class="opening__inner">
+      <div class="opening__ornament" aria-hidden="true"></div>
+      <p class="opening__kicker">You are invited to the wedding of</p>
+      <h1 class="opening__names">
+        <span>Kartikeyan</span>
+        <span class="opening__amp">&amp;</span>
+        <span>Sajni</span>
+      </h1>
+      <button id="beginBtn" class="opening__btn" type="button">Open Invitation</button>
+    </div>
+  </div>
+
+  <!-- Scroll progress indicator -->
+  <div id="progress" class="progress" aria-hidden="true"></div>
+
+  <!-- ================================ NAV ================================== -->
+  <nav id="nav" class="nav" aria-label="Invitation sections" hidden>
+    <button class="nav__toggle" id="navToggle" aria-expanded="false" aria-controls="navMenu" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <span class="nav__brand">K &amp; S</span>
+    <ul class="nav__menu" id="navMenu"></ul>
+  </nav>
+
+  <main id="main">
+
+    <!-- ============================== HERO ================================ -->
+    <header id="home" class="hero" aria-label="Wedding invitation">
+      <div class="petals" aria-hidden="true"></div>
+      <div class="hero__frame reveal">
+        <p class="hero__kicker">Wedding Invitation</p>
+        <div class="hero__names">
+          <span class="hero__name" id="heroGroom">Kartikeyan Gupta</span>
+          <span class="hero__amp" aria-hidden="true">&amp;</span>
+          <span class="hero__name" id="heroBride">Sajni Suvarna</span>
+        </div>
+        <p class="hero__together">Together with their families</p>
+        <div class="divider" aria-hidden="true"><span></span></div>
+        <p class="hero__date" id="heroDate">Saturday, 14 February 2027</p>
+        <p class="hero__hashtag" id="heroHashtag"></p>
+      </div>
+      <div class="hero__scroll" aria-hidden="true">
+        <span>Scroll</span>
+        <span class="hero__scroll-line"></span>
+      </div>
+    </header>
+
+    <!-- ===================== AT-A-GLANCE SUMMARY ========================== -->
+    <section id="summary" class="section summary" aria-label="Wedding at a glance">
+      <div class="summary__card reveal" id="summaryCard"><!-- JS --></div>
+    </section>
+
+    <!-- ============================ COUNTDOWN ============================= -->
+    <section id="countdown" class="section countdown" aria-label="Countdown to the wedding">
+      <h2 class="section__title">Counting Down to the Big Day</h2>
+      <div class="countdown__grid" id="countdownGrid" role="timer" aria-live="polite"><!-- JS --></div>
+    </section>
+
+    <!-- ========================= INVITATION MESSAGE ====================== -->
+    <section id="message" class="section message" aria-label="Invitation message">
+      <div class="ornament ornament--top" aria-hidden="true"></div>
+      <p class="message__text" id="invitationMessage"></p>
+    </section>
+
+    <!-- ============================= OUR STORY =========================== -->
+    <section id="story" class="section story" aria-label="Our story" hidden>
+      <h2 class="section__title">A New Chapter Begins</h2>
+      <p class="story__text" id="storyText"></p>
+    </section>
+
+    <!-- ============================== EVENTS ============================= -->
+    <section id="events" class="section events" aria-label="Wedding celebrations">
+      <h2 class="section__title">The Wedding Celebrations</h2>
+      <div class="events__list" id="eventsList"><!-- JS --></div>
+    </section>
+
+    <!-- ============================= FAMILIES ============================ -->
+    <section id="families" class="section families" aria-label="Our families">
+      <h2 class="section__title">With the Blessings of Our Families</h2>
+      <p class="section__subtitle">Two families, one celebration</p>
+      <div class="families__grid" id="familiesGrid"><!-- JS --></div>
+    </section>
+
+    <!-- ============================= GALLERY ============================= -->
+    <section id="gallery" class="section gallery" aria-label="Photo gallery" hidden>
+      <h2 class="section__title">Moments</h2>
+      <div class="gallery__grid" id="galleryGrid"><!-- JS --></div>
+    </section>
+
+    <!-- =========================== GUEST WELCOME ========================= -->
+    <section id="welcome" class="section welcome" aria-label="Guest welcome">
+      <div class="ornament ornament--top" aria-hidden="true"></div>
+      <h2 class="section__title">Your Presence Is Our Greatest Gift</h2>
+      <p class="welcome__text">
+        Nothing would make our families happier than to have you beside us as we
+        begin this new journey. We look forward to celebrating, sharing a meal,
+        and making memories together.
+      </p>
+    </section>
+
+    <!-- ========================= GUEST INFORMATION ======================= -->
+    <section id="info" class="section info" aria-label="Guest information">
+      <h2 class="section__title">Good to Know</h2>
+      <div class="info__grid" id="infoGrid"><!-- JS --></div>
+    </section>
+
+    <!-- ============================== RSVP =============================== -->
+    <section id="rsvp" class="section rsvp" aria-label="RSVP">
+      <h2 class="section__title">Will You Join Us?</h2>
+      <div class="rsvp__box" id="rsvpBox"><!-- JS --></div>
+      <p class="rsvp__note" id="rsvpNote"></p>
+    </section>
+
+    <!-- ============================ GUESTBOOK ============================ -->
+    <section id="guestbook" class="section guestbook" aria-label="Guestbook">
+      <h2 class="section__title">Leave a Message for the Couple</h2>
+      <form class="guestbook__form" id="guestbookForm" novalidate>
+        <label class="sr-only" for="gbName">Your name</label>
+        <input id="gbName" name="name" type="text" maxlength="60" placeholder="Your name" autocomplete="name" required />
+        <label class="sr-only" for="gbMessage">Your message</label>
+        <textarea id="gbMessage" name="message" rows="3" placeholder="Write your wishes for Kartikeyan &amp; Sajni…" required></textarea>
+        <div class="guestbook__row">
+          <span class="guestbook__count" id="gbCount" aria-live="polite"></span>
+          <button type="submit" class="btn btn--primary">Send Congratulations &#10084;&#65039;</button>
+        </div>
+        <p class="guestbook__status" id="gbStatus" role="status" aria-live="polite"></p>
+      </form>
+      <ul class="guestbook__list" id="guestbookList" aria-label="Messages from guests"><!-- JS --></ul>
+    </section>
+
+    <!-- ============================ BLESSINGS ============================ -->
+    <section id="blessings" class="section blessings" aria-label="Blessings and gifts">
+      <h2 class="section__title">Your Blessings Are More Than Enough</h2>
+      <div class="blessings__box" id="blessingsBox"><!-- JS --></div>
+    </section>
+
+    <!-- ============================= CONTACT ============================= -->
+    <section id="contact" class="section contact" aria-label="Contact for help">
+      <h2 class="section__title">Need Help?</h2>
+      <div class="contact__grid" id="contactGrid"><!-- JS --></div>
+    </section>
+
+    <!-- ============================== ACTIONS ============================ -->
+    <section class="section actions" aria-label="Quick actions">
+      <div class="actions__row">
+        <button id="saveDateBtn" class="btn btn--outline" type="button">&#128197; Save the Date</button>
+        <button id="shareBtn" class="btn btn--primary" type="button">&#128241; Share Invitation</button>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="ornament ornament--top" aria-hidden="true"></div>
+    <p class="footer__names" id="footerNames">Kartikeyan &amp; Sajni</p>
+    <p class="footer__note">With love and gratitude</p>
+  </footer>
+
+  <!-- Floating controls -->
+  <button id="musicBtn" class="fab fab--music" type="button" aria-label="Play music" hidden>&#127925;</button>
+  <button id="topBtn" class="fab fab--top" type="button" aria-label="Back to top" hidden>&#8593;</button>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="lightbox" role="dialog" aria-label="Photo viewer" hidden>
+    <button class="lightbox__close" id="lbClose" aria-label="Close">&times;</button>
+    <button class="lightbox__nav lightbox__prev" id="lbPrev" aria-label="Previous">&#8249;</button>
+    <img class="lightbox__img" id="lbImg" alt="" />
+    <button class="lightbox__nav lightbox__next" id="lbNext" aria-label="Next">&#8250;</button>
+  </div>
+
+  <!-- Scripts: config first, then service/util modules, then app -->
+  <script src="js/config.js"></script>
+  <script src="js/guestbookService.js"></script>
+  <script src="js/countdown.js"></script>
+  <script src="js/calendar.js"></script>
+  <script src="js/sharing.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
